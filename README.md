@@ -15,5 +15,6 @@
 - Test Sequencer batching on triton server
     - Utilizing for time-series model 
    - Refer: https://github.com/triton-inference-server/server/blob/main/docs/user_guide/model_configuration.md#sequence-batcher
-   
+
 - Deploy prometheus + grafana + alertmanger for monitoring Triton server 
+    - Alermanager: https://prometheus.io/docs/tutorials/alerting_based_on_metrics/ 
