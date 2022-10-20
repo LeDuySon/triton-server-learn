@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 5s
+
+rule_files:
+  - rules.yml
+  
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+       - alertmanager:9093
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: triton
+    static_configs:
+      - targets: ["inference_server:8002"]
+  

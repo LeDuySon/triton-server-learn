@@ -1,0 +1,10 @@
+name: "yolov7lp_det_tensorrt"
+platform: "tensorrt_plan"
+max_batch_size: 8
+dynamic_batching { }
+instance_group [
+{
+    count: 2
+    kind: KIND_GPU
+}
+]

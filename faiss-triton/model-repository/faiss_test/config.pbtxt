@@ -1,0 +1,25 @@
+name: "faiss_test"
+backend: "python"
+max_batch_size: 16 
+input [
+{
+    name: "inp_vector"
+    data_type: TYPE_FP32  
+    dims: [ 100 ]
+}
+]
+ 
+output [
+{
+    name: "output"
+    data_type: TYPE_FP32
+    dims: [ 4 ]
+}
+]
+
+instance_group [{ kind: KIND_GPU }]
+
+parameters: {
+  key: "EXECUTION_ENV_PATH",
+  value: {string_value: "$$TRITON_MODEL_DIRECTORY/faiss.tar.gz"}
+}

@@ -1,0 +1,5 @@
+name: "text_reg"
+platform: "tensorrt_plan"
+max_batch_size: 96
+
+dynamic_batching { }

@@ -1,0 +1,38 @@
+name: "sequencer_prod"
+platform: "tensorflow_savedmodel"
+max_batch_size: 0
+
+sequence_batching {
+  max_sequence_idle_microseconds: 5000000
+  oldest
+    {
+      max_candidate_sequences: 4
+    }
+  control_input [
+  ]
+}
+
+input [
+  {
+    name: "lstm_input"
+    data_type: TYPE_FP32
+    dims: [ 1, 1, 1 ]
+  }
+]
+output [
+  {
+    name: "dense"
+    data_type: TYPE_FP32
+    dims: [ 1, 1 ]
+  }
+]
+
+default_model_filename: "model"
+instance_group [
+  {
+    count: 4
+    kind: KIND_GPU
+  }
+]
+
+

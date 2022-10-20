@@ -1,0 +1,13 @@
+name: "sequencer_test"
+platform: "tensorflow_savedmodel"
+max_batch_size: 0
+
+default_model_filename: "model"
+instance_group [
+  {
+    count: 3
+    kind: KIND_GPU
+  }
+]
+
+
