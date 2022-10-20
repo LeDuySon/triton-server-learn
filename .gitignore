@@ -1,0 +1,21 @@
+triton_licenseplate/python_backend/
+triton_licenseplate/server/
+triton_licenseplate/yolov7/
+datasets/
+checkpoints/
+
+# faiss serialize
+index.bin
+
+# model 
+*.plan
+*.onnx
+*.engine 
+*.pth
+*.pb
+variables/
+
+# conda env 
+*.tar.gz
+
+__pycache__/
